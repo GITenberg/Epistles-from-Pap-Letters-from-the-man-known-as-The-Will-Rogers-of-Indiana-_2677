@@ -1,0 +1,38 @@
+_repo: Epistles-from-Pap-Letters-from-the-man-known-as-The-Will-Rogers-of-Indiana-_2677
+contributor:
+  compiler:
+    agent_name: Durham, J. Frank
+    alias: Durham, Frank
+    birthdate: 1915
+    gutenberg_agent_id: '26580'
+    url: http://www.gutenberg.org/2009/agents/26580
+  creator:
+    editor:
+      agent_name: Hay, Douglas (Douglas N.)
+      gutenberg_agent_id: '995'
+      url: http://www.gutenberg.org/2009/agents/995
+creator:
+  author:
+    agent_name: Durham, Andrew Everett
+    alias: Durham, Pap
+    birthdate: 1882
+    deathdate: 1954
+    gutenberg_agent_id: '994'
+    url: http://www.gutenberg.org/2009/agents/994
+description: ''
+gutenberg_issued: '2001-06-01'
+gutenberg_type: Text
+identifiers:
+  gutenberg: '2677'
+language: en
+publisher: Project Gutenberg
+rights: Copyrighted. Read the copyright notice inside this book for details.
+rights_url: ''
+subjects:
+- !lcsh 'Lobbyists -- Indiana -- Correspondence'
+- !lcsh 'Durham, Andrew Everett, 1882-1954 -- Correspondence'
+- !lcsh 'Legislators -- Indiana -- Correspondence'
+- !lcc 'F516'
+- !lcsh 'Indiana -- Politics and government -- 20th century'
+title: 'Epistles from Pap: Letters from the man known as ''The Will Rogers of Indiana'''
+url: http://www.gutenberg.org/ebooks/2677
