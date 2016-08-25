@@ -1,0 +1,61 @@
+sudo: required
+dist: trusty
+language: ruby
+
+before_install:
+before_install:
+- gem install asciidoctor -v 1.5.2
+- gem install tilt
+- sudo pip install git+https://github.com/gitenberg-dev/gitberg
+- sudo pip install pillow
+- sudo pip install cssutils
+- sudo pip install docutils
+- sudo pip install roman
+- sudo pip install git+https://github.com/gitenberg-dev/pg-epubmaker
+script:
+- VERSION=`ruby -e "require 'yaml'; meta = YAML.load_file('metadata.yaml'); puts meta['_version'];"`
+- git clone https://github.com/gitenberg-dev/asciidoctor-htmlbook.git
+- sudo pip install -r asciidoctor-htmlbook/gitberg-machine/requirements.txt
+
+- /usr/bin/python -c "from gitenberg import travis; travis.build_epub()"
+- ebook-convert book.epub book.mobi
+- xvfb-run ebook-convert book.epub book.pdf
+branches:
+  only:
+  - master
+notifications:
+  webhooks:
+    urls:
+      - https://unglue.it/api/travisci/webhook
+    on_success: always
+    on_failure: never
+    on_start: never
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key:
+    secure: KLHvO6GoY6Mx4+S1LfBwpOBlxHbY+7awCV21Kl2v/Yp/lvPpvGjKNZ4uB9Dmxwvf9eCeFxOes2SfLyVP77/QiSWiwUq2VWZ1P7yKAlAVcFEmKimEwz6lInd+6z0JGwdL+EX98ZwtTOCWjcb5K1ha/pWWoFlru8+RKZUcseOEV9SFyrTF3sAHHbR2J1xVmfl+5mCjc5IgiNdzZypxiVTwjf+KXUTAITjIr+Zv82148mQ1AAMsmVhovblrLeoWQ1gCkIHlLQ19eGCEMzhmYCh/c0RHVY1LJsXdsKxe3MmlGdgveM6V/XU3CRHwzp57WdOmjCCF4bAj9ZZ1p3p5pfx8XF7w2eREvxNl/dIyuRfa63E0zrvw2/Rr2o7laj9CsosRdqo7iM5xP3MpMxVR9rXDMNl32wjuvDAB26ftqrGLDf3mbpRiKtdkBfmFCp/nz3AKCeNUVC9+NeEaeRXnDYreH5E+jSJLD8HZ0FLde9OCEXR76NhJgBcy3tzG9NtE8/xsHx4+0d+/k2L0hkN/yQWXjcF43yqawTMetb2ovNTIGoKXhPskvqOOvCFs2DHugZrsJ9vawXpY0oJEefgHyxzJCNzPlVN7IZnPnSQqoxihh4KFOg5MdMuv5fHYnKzZg+13ggCmBMPXbuztPQrt1Kvg1zqbYlNu/jTrx/KsOTOzKUw=
+  file:
+    - book.epub
+    - book.mobi
+    - book.pdf
+  "on":
+    repo: GITenberg/Epistles-from-Pap-Letters-from-the-man-known-as-The-Will-Rogers-of-Indiana-_2677
+addons:
+  apt:
+    packages:
+    - xsltproc
+    - xvfb
+    - calibre
+    - python-pip
+    - git
+    - python-dev
+    - libjpeg-dev
+    - libpng-dev
+    - libfreetype6
+    - libfreetype6-dev
+    - zlib1g-dev
+    - python-lxml
+    - libxml2-dev
+    - libxslt1-dev
+    - tidy
