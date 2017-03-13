@@ -1,5 +1,5 @@
 _repo: Epistles-from-Pap-Letters-from-the-man-known-as-The-Will-Rogers-of-Indiana-_2677
-_version: 0.1.0
+_version: 0.2.0
 contributor:
   compiler:
     agent_name: Durham, J. Frank
@@ -12,6 +12,9 @@ contributor:
       agent_name: Hay, Douglas (Douglas N.)
       gutenberg_agent_id: '995'
       url: http://www.gutenberg.org/2009/agents/995
+covers:
+- cover_type: generated
+  image_path: cover.png
 creator:
   author:
     agent_name: Durham, Andrew Everett
@@ -21,6 +24,8 @@ creator:
     gutenberg_agent_id: '994'
     url: http://www.gutenberg.org/2009/agents/994
 description: ''
+edition_identifiers:
+  edition_id: http://www.gutenberg.org/ebooks/2677#Epistles-from-Pap-Letters-from-the-man-known-as-The-Will-Rogers-of-Indiana-
 gutenberg_issued: '2001-06-01'
 gutenberg_type: Text
 identifiers:
