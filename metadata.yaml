@@ -1,5 +1,5 @@
 _repo: Epistles-from-Pap-Letters-from-the-man-known-as-The-Will-Rogers-of-Indiana-_2677
-_version: 0.2.0
+_version: 0.2.1
 contributor:
   compiler:
     agent_name: Durham, J. Frank
@@ -40,5 +40,6 @@ subjects:
 - !lcsh 'Legislators -- Indiana -- Correspondence'
 - !lcc 'F516'
 - !lcsh 'Indiana -- Politics and government -- 20th century'
+- GITenberg
 title: 'Epistles from Pap: Letters from the man known as ''The Will Rogers of Indiana'''
 url: http://www.gutenberg.org/ebooks/2677
